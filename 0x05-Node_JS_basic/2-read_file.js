@@ -4,15 +4,15 @@ const fs = require('fs');
 function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
-    const lines = data.split('\n').filter(line => line.trim() !== '');
-    const students = lines.slice(1); // Remove the header line
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
+    const students = lines.slice(1);
 
     const totalStudents = students.length;
     console.log(`Number of students: ${totalStudents}`);
 
     const fields = {};
     students.forEach((student) => {
-      const [firstname, , , field] = student.split(',').map(item => item.trim());
+      const [firstname, , , field] = student.split(',').map((item) => item.trim());
       if (field) {
         if (!fields[field]) {
           fields[field] = [];

@@ -9,7 +9,7 @@ console.log('Welcome to Holberton School, what is your name?');
 if (process.stdin.isTTY) {
   const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout
+    output: process.stdout,
   });
 
   rl.question('', (answer) => {
